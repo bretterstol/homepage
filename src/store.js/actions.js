@@ -1,5 +1,5 @@
 
-import {ADD_TODO} from './types';
+import {ADD_TODO, REMOVE_TODO} from './types';
 
 export const addTodo = (item) => ({
     type: ADD_TODO,
@@ -7,6 +7,6 @@ export const addTodo = (item) => ({
     value: item.text
 });
 
-export const removeTodo = () => ({
-    
+export const removeTodo = (itme) => ({
+   id: idem.id
 })
