@@ -7,6 +7,6 @@ export const addTodo = (item) => ({
     value: item.text
 });
 
-export const removeTodo = (itme) => ({
-   id: idem.id
+export const removeTodo = (item) => ({
+   id: item.id
 })
