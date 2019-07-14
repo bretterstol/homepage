@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import uuid from 'uuid';
+import useAppContext from './hooks';
+import { addTodo, removeTodo } from '../store/actions';
 
 function TodoList(){
     const [text, setText] = useState("");
-    const [todo, setTodo] = useState([]);
 
+    const {state, dispatch} = useAppContext();
+    const todo = state.todoList;
     const updateText = (event) => {
         const {value} = event.target;
         setText(value);
@@ -17,12 +20,12 @@ function TodoList(){
                 id: uuid(),
                 text
             };
-            setTodo([...todo, item]);
+            dispatch(addTodo(item));
         }
     }
 
     const removeItem = (id) => () => {
-        setTodo(todo.filter(item => item.id !== id));
+        dispatch(removeTodo(id));
     }
 
 
